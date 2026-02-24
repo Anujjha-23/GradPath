@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply Now | GradPath</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-hero{
+  padding:100px 0 60px;
+  background:linear-gradient(135deg,#1E56A0,#163d73);
+  color:#fff;
+  text-align:center;
+}
+.contact-card{
+  max-width:520px;
+  margin:-60px auto 80px;
+  background:#fff;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 20px 60px rgba(0,0,0,0.08);
+}
+.contact-card input,
+.contact-card select{
+  width:100%;
+  padding:14px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #e3e9f6;
+  font-size:15px;
+  transition:0.3s;
+}
+.contact-card input:focus,
+.contact-card select:focus{
+  border-color:#1E56A0;
+  outline:none;
+  box-shadow:0 0 0 3px rgba(30,86,160,0.1);
+}
+.contact-btn{
+  width:100%;
+  padding:14px;
+  background:#1E56A0;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+.contact-btn:hover{
+  background:#163d73;
+}
+</style>
+</head>
+<body>
+
+<section class="contact-hero">
+  <div class="container">
+    <h1>Apply Now</h1>
+    <p>Fill the form and our counsellor will contact you.</p>
+  </div>
+</section>
+
+<div class="contact-card">
+<form id="applyForm">
+  <input type="text" placeholder="Full Name" required>
+  <input type="email" placeholder="Email Address" required>
+  <input type="tel" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter valid 10-digit phone number">
+  <select required>
+    <option value="">Select Program</option>
+    <option>MBA</option>
+    <option>BBA</option>
+    <option>BCA</option>
+    <option>MCA</option>
+  </select>
+  <button type="submit" class="contact-btn">Submit Application</button>
+</form>
+</div>
+
+<script>
+document.getElementById("applyForm").addEventListener("submit",function(e){
+e.preventDefault();
+alert("Application Submitted Successfully!");
+this.reset();
+});
+</script>
+
+</body>
+</html>
