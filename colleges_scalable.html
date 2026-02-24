@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Programs | GradPath</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="container" style="padding:80px 0;">
+<h1 class="section-title">Explore Programs</h1>
+
+<div id="collegeGrid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:40px;"></div>
+
+</section>
+
+<script src="colleges-data.js"></script>
+<script>
+const grid = document.getElementById("collegeGrid");
+
+collegesData.forEach(college => {
+  grid.innerHTML += `
+    <a href="college-detail.html?slug=${college.slug}" style="text-decoration:none;color:inherit;">
+      <div style="background:#fff;padding:25px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.06);">
+        <h3>${college.name}</h3>
+        <p>${college.program} · ${college.fees} · ${college.duration}</p>
+      </div>
+    </a>
+  `;
+});
+</script>
+
+</body>
+</html>
