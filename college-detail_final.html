@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Details | GradPath</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.banner{background:#1E56A0;color:#fff;padding:80px 0;text-align:center}
+.detail-card{max-width:800px;margin:-50px auto 80px;background:#fff;padding:40px;border-radius:18px;box-shadow:0 20px 60px rgba(0,0,0,0.08)}
+</style>
+</head>
+<body>
+
+<section class="banner">
+<h1 id="name"></h1>
+<p id="program"></p>
+</section>
+
+<div class="detail-card">
+<p><strong>Duration:</strong> <span id="duration"></span></p>
+<p><strong>Total Fees:</strong> ₹<span id="fees"></span></p>
+<p><strong>Accreditation:</strong> <span id="accreditation"></span></p>
+<a href="contact.html" style="display:inline-block;margin-top:20px;padding:12px 25px;background:#1E56A0;color:#fff;border-radius:8px;text-decoration:none">Apply Now</a>
+</div>
+
+<script src="colleges-data.js"></script>
+<script>
+const slug=new URLSearchParams(window.location.search).get("slug");
+const college=collegesData.find(c=>c.slug===slug);
+if(college){
+document.getElementById("name").innerText=college.name;
+document.getElementById("program").innerText=college.program+" Program";
+document.getElementById("duration").innerText=college.duration;
+document.getElementById("fees").innerText=college.fees.toLocaleString();
+document.getElementById("accreditation").innerText=college.accreditation;
+}
+</script>
+
+</body>
+</html>
