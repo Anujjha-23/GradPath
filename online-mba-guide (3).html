@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online MBA Guide 2026 — Complete Guide for Indian Students | GradPath</title>
+  <meta name="description" content="The most comprehensive guide to Online MBA in India. Eligibility, top colleges, fees, specializations, UGC-DEB approval explained. Free counselling included."/>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231E56A0'/><text y='.9em' font-size='70' x='15' fill='white' font-weight='900'>G</text></svg>"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --navy: #0A2463; --blue: #1E56A0; --gold: #F4A833; --gold-dark: #e8941a;
+      --text: #1e293b; --muted: #64748b; --border: #e2e8f0; --bg-soft: #F7F9FC;
+      --font: 'Plus Jakarta Sans', sans-serif;
+    }
+    body { font-family: var(--font); color: var(--text); background: #fff; line-height: 1.6; }
+
+    /* ── NAVBAR ── */
+    .navbar { position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); }
+    .navbar-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; }
+    .navbar-logo { text-decoration: none; display: flex; align-items: center; gap: 10px; flex-shrink: 0; margin-right: 20px; }
+    /* logo size handled by style.css */
+    .logo-text { font-family: var(--font); font-size: 1.22rem; font-weight: 800; color: var(--blue); white-space: nowrap; line-height: 1; }
+    .logo-text span { color: var(--gold); }
+    .nav-links { display: flex; align-items: center; gap: 2px; margin-left: auto; }
+    .nav-links a { text-decoration: none; color: #475569; font-family: var(--font); font-size: .875rem; font-weight: 500; padding: 7px 11px; border-radius: 8px; transition: color .18s, background .18s; white-space: nowrap; }
+    .nav-links a:hover { color: var(--blue); background: #EEF3FB; }
+    .nav-links a.active { color: var(--blue); background: #EEF3FB; font-weight: 600; }
+    .btn-nav-cta { background: var(--gold); color: var(--navy); text-decoration: none; font-family: var(--font); font-size: .875rem; font-weight: 800; padding: 10px 22px; border-radius: 10px; transition: transform .18s, box-shadow .18s, background .18s; white-space: nowrap; flex-shrink: 0; margin-left: 16px; border: none; cursor: pointer; display: inline-block; }
+    .btn-nav-cta:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(244,168,51,.35); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; margin-left: auto; }
+    .hamburger span { display: block; width: 22px; height: 2.5px; background: var(--navy); border-radius: 2px; }
+    .mobile-menu { display: none; flex-direction: column; padding: 14px 24px 20px; border-top: 1px solid var(--border); background: #fff; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { padding: 10px 0; text-decoration: none; color: #475569; font-family: var(--font); font-size: .95rem; font-weight: 500; border-bottom: 1px solid #f1f5f9; }
+    .mobile-menu .btn-nav-cta { margin-top: 14px; text-align: center; border-radius: 10px; padding: 12px; }
+    @media (max-width: 900px) { .nav-links, .btn-nav-cta, .btn-accent.nav-cta { display: none; } .hamburger { display: flex; } }
+
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── BREADCRUMB ── */
+    .breadcrumb { background: var(--bg-soft); border-bottom: 1px solid var(--border); padding: 12px 0; }
+    .breadcrumb-inner { display: flex; align-items: center; gap: 8px; font-size: .8rem; color: var(--muted); font-family: var(--font); }
+    .breadcrumb-inner a { color: var(--muted); text-decoration: none; transition: color .18s; }
+    .breadcrumb-inner a:hover { color: var(--blue); }
+    .breadcrumb-inner span { color: var(--text); font-weight: 600; }
+
+    /* ── HERO ── */
+    .guide-hero {
+      background: var(--navy); position: relative; overflow: hidden; padding: 80px 0 72px;
+    }
+    .guide-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 10% 90%, rgba(30,86,160,.5) 0%, transparent 50%), radial-gradient(ellipse at 90% 10%, rgba(58,123,213,.28) 0%, transparent 50%); }
+    .guide-hero-inner { position: relative; z-index: 1; max-width: 760px; }
+    .guide-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(244,168,51,.15); border: 1px solid rgba(244,168,51,.35); color: #fcd34d; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 20px; font-family: var(--font); }
+    .guide-eyebrow::before { content: '📚'; font-size: .85rem; }
+    .guide-hero h1 { font-family: var(--font); font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; color: #fff; line-height: 1.1; letter-spacing: -.03em; margin-bottom: 18px; }
+    .guide-hero h1 em { font-style: normal; background: linear-gradient(90deg, var(--gold), #fb923c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .guide-hero-desc { font-size: 1rem; color: rgba(255,255,255,.72); max-width: 560px; line-height: 1.8; margin-bottom: 32px; }
+    .guide-hero-meta { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 36px; }
+    .guide-meta-item { display: flex; align-items: center; gap: 6px; font-size: .8rem; color: rgba(255,255,255,.6); font-family: var(--font); font-weight: 500; }
+    .guide-meta-item strong { color: rgba(255,255,255,.9); }
+    .guide-hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-white { background: #fff; color: var(--navy); border: none; border-radius: 10px; padding: 13px 28px; font-family: var(--font); font-size: .92rem; font-weight: 800; text-decoration: none; cursor: pointer; transition: transform .2s, box-shadow .2s; display: inline-block; }
+    .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.2); }
+    .btn-ghost { background: transparent; border: 2px solid rgba(255,255,255,.3); color: #fff; border-radius: 10px; padding: 12px 28px; font-family: var(--font); font-size: .92rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: border-color .2s, background .2s; display: inline-block; }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
+
+    /* ── TOC ── */
+    .guide-toc-bar { background: #fff; border-bottom: 2px solid var(--border); position: sticky; top: 68px; z-index: 900; overflow-x: auto; }
+    .guide-toc-inner { max-width: 1180px; margin: 0 auto; padding: 0 24px; display: flex; gap: 0; }
+    .toc-link { padding: 14px 16px; font-family: var(--font); font-size: .8rem; font-weight: 600; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: 2px solid transparent; margin-bottom: -2px; transition: color .18s, border-color .18s; }
+    .toc-link:hover { color: var(--blue); border-color: var(--blue); }
+    .toc-link.active { color: var(--blue); border-color: var(--blue); }
+
+    /* ── GUIDE BODY ── */
+    .guide-body { padding: 72px 0; }
+    .guide-layout { display: grid; grid-template-columns: 1fr 320px; gap: 56px; align-items: start; }
+    .guide-content { min-width: 0; }
+    .guide-section { margin-bottom: 72px; }
+    .guide-section:last-child { margin-bottom: 0; }
+    .section-tag { display: inline-block; background: #E8F0FB; color: var(--blue); font-size: .68rem; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px; font-family: var(--font); }
+    .guide-section h2 { font-family: var(--font); font-size: clamp(1.6rem, 2.5vw, 2.1rem); font-weight: 800; color: var(--navy); margin-bottom: 16px; letter-spacing: -.02em; line-height: 1.2; }
+    .guide-section h3 { font-family: var(--font); font-size: 1.08rem; font-weight: 800; color: var(--navy); margin: 28px 0 10px; }
+    .guide-section p { color: var(--muted); font-size: .95rem; line-height: 1.82; margin-bottom: 14px; }
+    .guide-section p:last-child { margin-bottom: 0; }
+    .guide-divider { border: none; border-top: 1.5px solid var(--border); margin: 64px 0; }
+
+    /* INFO BOX */
+    .info-box { background: #EEF3FB; border: 1.5px solid #C7D9F5; border-left: 4px solid var(--blue); border-radius: 12px; padding: 18px 20px; margin: 24px 0; display: flex; gap: 12px; align-items: flex-start; }
+    .info-box .info-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+    .info-box p { margin: 0; font-size: .88rem; color: #1E3A5F; line-height: 1.72; }
+    .info-box strong { color: var(--navy); font-weight: 700; }
+
+    .gold-box { background: rgba(244,168,51,.08); border: 1.5px solid rgba(244,168,51,.3); border-left: 4px solid var(--gold); border-radius: 12px; padding: 18px 20px; margin: 24px 0; }
+    .gold-box p { margin: 0; font-size: .88rem; color: #78350f; line-height: 1.72; }
+    .gold-box strong { color: #92400e; }
+
+    /* CARDS GRID */
+    .cards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+    .card-item { background: var(--bg-soft); border: 1.5px solid #E8EFF9; border-radius: 14px; padding: 20px; transition: border-color .2s, box-shadow .2s; }
+    .card-item:hover { border-color: var(--blue); box-shadow: 0 6px 20px rgba(30,86,160,.08); }
+    .card-item .card-icon { font-size: 1.5rem; margin-bottom: 10px; display: block; }
+    .card-item h4 { font-family: var(--font); font-size: .9rem; font-weight: 800; color: var(--navy); margin-bottom: 6px; }
+    .card-item p { font-size: .8rem; color: var(--muted); line-height: 1.65; margin: 0; }
+
+    /* CHECKLIST */
+    .checklist { list-style: none; margin: 16px 0; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li { display: flex; align-items: flex-start; gap: 10px; font-size: .9rem; color: var(--text); line-height: 1.6; }
+    .checklist li::before { content: '✓'; display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; background: #dcfce7; color: #16a34a; border-radius: 50%; font-size: .65rem; font-weight: 800; flex-shrink: 0; margin-top: 1px; }
+
+    /* COMPARISON TABLE */
+    .comp-table-wrap { overflow-x: auto; margin: 24px 0; border-radius: 14px; border: 1.5px solid var(--border); }
+    .comp-table { width: 100%; border-collapse: collapse; font-family: var(--font); font-size: .85rem; }
+    .comp-table th { background: var(--navy); color: #fff; padding: 12px 16px; text-align: left; font-weight: 700; font-size: .78rem; letter-spacing: .04em; text-transform: uppercase; }
+    .comp-table th:first-child { border-radius: 12px 0 0 0; }
+    .comp-table th:last-child { border-radius: 0 12px 0 0; }
+    .comp-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    .comp-table tr:last-child td { border-bottom: none; }
+    .comp-table tr:nth-child(even) td { background: var(--bg-soft); }
+    .comp-table tr:hover td { background: #EEF3FB; }
+    .comp-table .badge { display: inline-block; padding: 2px 8px; border-radius: 20px; font-size: .68rem; font-weight: 700; }
+    .badge-green { background: #dcfce7; color: #15803d; }
+    .badge-blue { background: #dbeafe; color: #1d4ed8; }
+    .badge-gold { background: rgba(244,168,51,.15); color: #92400e; }
+
+    /* SPEC LIST */
+    .spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 20px 0; }
+    .spec-item { background: var(--bg-soft); border: 1.5px solid #E8EFF9; border-radius: 11px; padding: 14px 16px; }
+    .spec-item .spec-icon { font-size: 1.2rem; margin-bottom: 6px; display: block; }
+    .spec-item h5 { font-family: var(--font); font-size: .82rem; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
+    .spec-item p { font-size: .75rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+    .faq-item { border: 1.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+    .faq-q { width: 100%; background: #fff; border: none; padding: 16px 20px; text-align: left; font-family: var(--font); font-size: .9rem; font-weight: 700; color: var(--navy); cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: 12px; transition: background .18s; }
+    .faq-q:hover { background: var(--bg-soft); }
+    .faq-q .faq-arrow { font-size: .75rem; color: var(--blue); transition: transform .22s; flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 20px 16px; font-size: .88rem; color: var(--muted); line-height: 1.78; border-top: 1px solid var(--border); background: var(--bg-soft); }
+    .faq-a.show { display: block; }
+
+    /* ── SIDEBAR ── */
+    .guide-sidebar { position: sticky; top: 120px; display: flex; flex-direction: column; gap: 20px; }
+    .sidebar-card { background: var(--bg-soft); border: 1.5px solid #E8EFF9; border-radius: 16px; padding: 22px; }
+    .sidebar-card h4 { font-family: var(--font); font-size: .92rem; font-weight: 800; color: var(--navy); margin-bottom: 14px; }
+    .sidebar-cta { background: linear-gradient(135deg, var(--blue), var(--navy)); color: #fff; border-radius: 16px; padding: 24px; text-align: center; }
+    .sidebar-cta h4 { color: #fff; font-family: var(--font); font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+    .sidebar-cta p { font-size: .82rem; color: rgba(255,255,255,.72); margin-bottom: 16px; line-height: 1.65; }
+    .btn-gold { background: var(--gold); color: var(--navy); border: none; border-radius: 10px; padding: 12px 20px; font-family: var(--font); font-size: .88rem; font-weight: 800; cursor: pointer; transition: background .18s, transform .18s; width: 100%; text-decoration: none; display: block; text-align: center; }
+    .btn-gold:hover { background: var(--gold-dark); transform: translateY(-1px); }
+    .sidebar-list { display: flex; flex-direction: column; gap: 8px; }
+    .sidebar-list a { display: flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text); font-size: .85rem; font-family: var(--font); font-weight: 500; padding: 8px 10px; border-radius: 9px; transition: background .18s, color .18s; }
+    .sidebar-list a:hover { background: #fff; color: var(--blue); }
+    .sidebar-list a::before { content: '→'; color: var(--blue); font-size: .7rem; font-weight: 800; }
+    .sidebar-stat { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); font-family: var(--font); }
+    .sidebar-stat:last-child { border-bottom: none; padding-bottom: 0; }
+    .sidebar-stat .s-label { font-size: .78rem; color: var(--muted); }
+    .sidebar-stat .s-val { font-size: .85rem; font-weight: 800; color: var(--navy); }
+
+    /* ── CTA BANNER ── */
+    .guide-cta-banner {
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      margin: 72px 0 0; border-radius: 20px; padding: 48px; text-align: center; position: relative; overflow: hidden;
+    }
+    .guide-cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(244,168,51,.15), transparent 60%); }
+    .guide-cta-banner-inner { position: relative; z-index: 1; }
+    .guide-cta-banner h2 { font-family: var(--font); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: #fff; margin-bottom: 12px; letter-spacing: -.02em; }
+    .guide-cta-banner h2 em { font-style: normal; color: var(--gold); }
+    .guide-cta-banner p { color: rgba(255,255,255,.7); font-size: .95rem; margin-bottom: 28px; max-width: 480px; margin-left: auto; margin-right: auto; }
+    .guide-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+    /* ── FOOTER ── */
+    .footer { background: #0A1628; padding: 60px 0 0; margin-top: 96px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 48px; }
+    .footer-brand p { font-size: .84rem; color: rgba(255,255,255,.42); line-height: 1.75; margin: 14px 0 20px; }
+    .footer-logo-row { display: flex; align-items: center; gap: 10px; }
+    .footer-logo-row svg { width: 36px; height: 36px; flex-shrink: 0; }
+    .footer-logo-text { font-family: var(--font); font-size: 1.15rem; font-weight: 800; color: #fff; }
+    .footer-logo-text span { color: var(--gold); }
+    .footer-social { display: flex; gap: 8px; }
+    .soc-btn { width: 34px; height: 34px; border-radius: 9px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.1); color: rgba(255,255,255,.55); font-size: .82rem; font-weight: 600; text-decoration: none; display: flex; align-items: center; justify-content: center; transition: background .18s, color .18s; }
+    .soc-btn:hover { background: var(--blue); color: #fff; }
+    .footer-col h4 { font-family: var(--font); font-size: .85rem; font-weight: 800; color: #fff; margin-bottom: 14px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 9px; }
+    .footer-col ul a { text-decoration: none; color: rgba(255,255,255,.42); font-size: .83rem; transition: color .18s; font-family: var(--font); }
+    .footer-col ul a:hover { color: var(--gold); }
+    .footer-email { color: var(--gold); text-decoration: none; font-size: .84rem; font-weight: 700; font-family: var(--font); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 18px 24px; font-family: var(--font); color: rgba(255,255,255,.3); font-size: .78rem; }
+    .footer-bottom a { color: rgba(255,255,255,.38); text-decoration: none; }
+    .footer-bottom a:hover { color: var(--gold); }
+
+    /* ── MODAL ── */
+    .lead-modal { position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity .25s; }
+    .lead-modal.open { opacity: 1; pointer-events: all; }
+    .lead-modal-backdrop { position: absolute; inset: 0; background: rgba(10,36,99,.6); backdrop-filter: blur(4px); }
+    .lead-modal-dialog { position: relative; z-index: 1; background: #fff; border-radius: 20px; width: 96%; max-width: 560px; max-height: 92vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(10,36,99,.25); animation: modalSlide .3s ease; }
+    @keyframes modalSlide { from{transform:translateY(20px) scale(.97);opacity:0} to{transform:none;opacity:1} }
+    .lead-close { position: absolute; top: 14px; right: 14px; z-index: 2; background: #f1f5f9; border: none; border-radius: 50%; width: 32px; height: 32px; font-size: .95rem; cursor: pointer; color: #64748b; display: flex; align-items: center; justify-content: center; transition: background .18s; }
+    .lead-close:hover { background: #e2e8f0; }
+    .modal-header-band { padding: 22px 24px 16px; border-bottom: 1px solid #f1f5f9; display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .modal-header-left { display: flex; align-items: center; gap: 12px; }
+    .modal-icon-wrap { font-size: 1.7rem; line-height: 1; }
+    .modal-header-left h3 { font-family: var(--font); font-size: 1.07rem; font-weight: 800; color: var(--navy); margin: 0 0 3px; }
+    .modal-header-left p { font-size: .78rem; color: var(--muted); margin: 0; }
+    .modal-trust-badges { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+    .mtb { font-size: .7rem; font-weight: 700; color: #15803d; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 3px 9px; border-radius: 20px; font-family: var(--font); }
+    .lead-form { padding: 18px 24px 20px; }
+    .lf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .lf-field { display: flex; flex-direction: column; gap: 5px; }
+    .lf-field label { font-family: var(--font); font-size: .78rem; font-weight: 700; color: #374151; }
+    .lf-field .req { color: #ef4444; }
+    .lf-field input, .lf-field select { border: 1.5px solid #e2e8f0; border-radius: 9px; padding: 10px 12px; font-family: var(--font); font-size: .88rem; color: var(--text); transition: border-color .18s, box-shadow .18s; outline: none; background: #fff; }
+    .lf-field input:focus, .lf-field select:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(30,86,160,.1); }
+    .lf-field input.error, .lf-field select.error { border-color: #ef4444; }
+    .lf-err { font-size: .72rem; color: #ef4444; font-family: var(--font); display: none; }
+    .lf-err.show { display: block; }
+    .schedule-toggle-row { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-family: var(--font); font-size: .83rem; color: var(--muted); }
+    .toggle-sch-btn { margin-left: auto; background: #EEF3FB; color: var(--blue); border: none; border-radius: 7px; padding: 5px 12px; font-size: .78rem; font-weight: 700; cursor: pointer; font-family: var(--font); transition: background .18s; }
+    .toggle-sch-btn:hover { background: #dbeafe; }
+    .schedule-box { background: var(--bg-soft); border: 1.5px solid #E8EFF9; border-radius: 12px; padding: 16px; margin-bottom: 14px; }
+    .sch-title { font-family: var(--font); font-size: .78rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .sch-dates { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+    .sch-date-btn { display: flex; flex-direction: column; align-items: center; background: #fff; border: 1.5px solid var(--border); border-radius: 10px; padding: 8px 12px; cursor: pointer; transition: border-color .18s, background .18s; font-family: var(--font); min-width: 54px; }
+    .sch-date-btn:hover { border-color: var(--blue); }
+    .sch-date-btn.active { border-color: var(--blue); background: var(--blue); }
+    .sch-date-btn.today-btn { border-color: var(--gold); }
+    .sch-date-btn.today-btn.active { background: var(--gold); border-color: var(--gold); }
+    .day-name { font-size: .6rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+    .sch-date-btn.active .day-name { color: rgba(255,255,255,.8); }
+    .sch-date-btn.today-btn.active .day-name { color: var(--navy); }
+    .day-num { font-size: 1.05rem; font-weight: 800; color: var(--navy); line-height: 1.2; }
+    .sch-date-btn.active .day-num { color: #fff; }
+    .sch-date-btn.today-btn.active .day-num { color: var(--navy); }
+    .day-month { font-size: .6rem; color: var(--muted); font-weight: 500; }
+    .sch-date-btn.active .day-month { color: rgba(255,255,255,.7); }
+    .today-label { font-size: .58rem; font-weight: 800; color: var(--gold); letter-spacing: .04em; }
+    .sch-date-btn.today-btn.active .today-label { color: var(--navy); }
+    .sch-times { display: flex; gap: 8px; flex-wrap: wrap; }
+    .sch-time { background: #fff; border: 1.5px solid var(--border); border-radius: 8px; padding: 6px 12px; font-family: var(--font); font-size: .78rem; font-weight: 600; cursor: pointer; transition: border-color .18s, background .18s, color .18s; color: var(--text); }
+    .sch-time:hover { border-color: var(--blue); color: var(--blue); }
+    .sch-time.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .sch-selected-label { font-size: .75rem; color: var(--blue); font-weight: 600; margin-top: 10px; font-family: var(--font); min-height: 18px; }
+    .lead-submit-btn { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--blue), var(--navy)); color: #fff; border: none; border-radius: 11px; cursor: pointer; font-family: var(--font); font-size: .95rem; font-weight: 800; transition: transform .18s, box-shadow .18s; margin-bottom: 10px; }
+    .lead-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(10,36,99,.25); }
+    .lead-privacy { font-size: .72rem; color: var(--muted); text-align: center; font-family: var(--font); }
+    .modal-success { padding: 48px 24px; text-align: center; }
+    .success-circle { width: 64px; height: 64px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: #fff; margin: 0 auto 18px; font-weight: 700; }
+    .modal-success h3 { font-family: var(--font); font-size: 1.3rem; font-weight: 800; color: var(--navy); margin-bottom: 10px; }
+    .modal-success p { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 8px; }
+    .success-meta { font-size: .82rem; color: var(--blue); font-weight: 600; font-family: var(--font); margin-bottom: 20px; min-height: 20px; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, var(--blue), var(--navy)); color: #fff; border-radius: 10px; padding: 12px 24px; text-decoration: none; font-family: var(--font); font-size: .88rem; font-weight: 700; transition: transform .18s, box-shadow .18s; border: none; cursor: pointer; }
+
+    /* SCROLL ANIMATIONS */
+    .aos { opacity: 0; transform: translateY(20px); transition: opacity .5s ease, transform .5s ease; }
+    .aos.visible { opacity: 1; transform: none; }
+    .aos-delay-1 { transition-delay: .1s; } .aos-delay-2 { transition-delay: .2s; }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) { .guide-layout { grid-template-columns: 1fr; } .guide-sidebar { position: static; } }
+    @media (max-width: 700px) { .cards-grid { grid-template-columns: 1fr; } .spec-grid { grid-template-columns: 1fr 1fr; } .footer-grid { grid-template-columns: 1fr 1fr; } .lf-row { grid-template-columns: 1fr; } }
+    @media (max-width: 500px) { .spec-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .guide-cta-banner { padding: 32px 20px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46" width="46" height="46">
+        <defs>
+          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1E56A0"/>
+            <stop offset="100%" style="stop-color:#0A2463"/>
+          </linearGradient>
+        </defs>
+        <rect width="46" height="46" rx="12" fill="url(#lg1)"/>
+        <polygon points="23,8 40,15 23,22 6,15" fill="white" opacity="0.95"/>
+        <line x1="40" y1="15" x2="40" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+        <circle cx="40" cy="28" r="2.2" fill="#F4A833"/>
+        <polyline points="12,20 19,28 27,24 34,18" fill="none" stroke="#F4A833" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="31,18 34,18 34,21" fill="none" stroke="#F4A833" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">Grad<em>Path</em></span>
+    </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="colleges.html">Colleges</a>
+      <a href="compare.html">Compare</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="online-mba-guide.html">MBA Guide</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="#" class="btn-accent nav-cta open-lead-modal">Free Counselling →</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+    <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="colleges.html">Colleges</a>
+    <a href="compare.html">Compare</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="online-mba-guide.html">MBA Guide</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="btn-primary open-lead-modal" style="margin-top:8px;justify-content:center">Free Counselling →</a>
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb">
+  <div class="container">
+    <div class="breadcrumb-inner">
+      <a href="index.html">Home</a> <span>›</span> <span>Online MBA Guide</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="guide-hero">
+  <div class="container">
+    <div class="guide-hero-inner">
+      <div class="guide-eyebrow">Complete Guide 2026</div>
+      <h1>Online MBA in India —<br>The <em>Complete Guide</em></h1>
+      <p class="guide-hero-desc">Everything you need to know about Online MBA programs in India — eligibility, top colleges, fees, specializations, UGC-DEB approval, and how to choose the right program for your career.</p>
+      <div class="guide-hero-meta">
+        <div class="guide-meta-item">📅 <strong>Updated:</strong> February 2026</div>
+        <div class="guide-meta-item">📖 <strong>Read time:</strong> ~12 minutes</div>
+        <div class="guide-meta-item">✅ <strong>Expert verified</strong></div>
+      </div>
+      <div class="guide-hero-btns">
+        <a href="#what-is" class="btn-white">Start Reading →</a>
+        <a href="#" class="btn-ghost" onclick="openLeadModal();return false;">Get Free Counselling</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOC BAR -->
+<div class="guide-toc-bar">
+  <div class="guide-toc-inner">
+    <a href="#what-is" class="toc-link">What is Online MBA?</a>
+    <a href="#eligibility" class="toc-link">Eligibility</a>
+    <a href="#top-colleges" class="toc-link">Top Colleges</a>
+    <a href="#fees" class="toc-link">Fees & Duration</a>
+    <a href="#specializations" class="toc-link">Specializations</a>
+    <a href="#ugc-deb" class="toc-link">UGC-DEB Approval</a>
+    <a href="#career" class="toc-link">Career Scope</a>
+    <a href="#faq" class="toc-link">FAQ</a>
+  </div>
+</div>
+
+<!-- GUIDE BODY -->
+<div class="guide-body">
+  <div class="container">
+    <div class="guide-layout">
+
+      <!-- MAIN CONTENT -->
+      <div class="guide-content">
+
+        <!-- WHAT IS -->
+        <div class="guide-section aos" id="what-is">
+          <span class="section-tag">Introduction</span>
+          <h2>What is an Online MBA?</h2>
+          <p>An Online MBA (Master of Business Administration) is a postgraduate management degree delivered entirely through a digital platform — combining recorded lectures, live sessions, and digital assessments. It carries the same academic value as a regular MBA when offered by a UGC-DEB approved university.</p>
+          <p>Unlike distance education of the past, today's online MBA programs offer interactive classrooms, industry mentors, placement support, and peer networks — at a fraction of the cost and with full schedule flexibility.</p>
+
+          <div class="info-box">
+            <div class="info-icon">ℹ️</div>
+            <p><strong>Important:</strong> Only Online MBA programs from universities approved by UGC-DEB (University Grants Commission — Distance Education Bureau) are recognized for government jobs, promotions, and higher studies in India. Always verify approval status before enrolling.</p>
+          </div>
+
+          <div class="cards-grid">
+            <div class="card-item"><span class="card-icon">💻</span><h4>100% Online</h4><p>Learn from anywhere — home, office, or travel. No physical attendance required except for optional exams at select centers.</p></div>
+            <div class="card-item"><span class="card-icon">⏱️</span><h4>Flexible Schedule</h4><p>Weekend live classes + recorded lectures let you study around your work schedule without taking a career break.</p></div>
+            <div class="card-item"><span class="card-icon">💰</span><h4>60–80% Less Expensive</h4><p>Online MBA typically costs ₹60,000–₹2.5 lakh total vs ₹10–25 lakh for a regular MBA at the same university.</p></div>
+            <div class="card-item"><span class="card-icon">🏅</span><h4>Same Degree Value</h4><p>UGC-DEB approved Online MBA degrees are equivalent to regular MBA for most employers and government purposes.</p></div>
+          </div>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- ELIGIBILITY -->
+        <div class="guide-section aos" id="eligibility">
+          <span class="section-tag">Eligibility</span>
+          <h2>Who Can Apply for an Online MBA?</h2>
+          <p>Online MBA programs in India have straightforward eligibility criteria that make them accessible to working professionals, career changers, and fresh graduates alike.</p>
+
+          <h3>Basic Eligibility Requirements</h3>
+          <ul class="checklist">
+            <li>Bachelor's degree in any discipline from a UGC-recognized university (minimum 3 years)</li>
+            <li>Minimum 50% marks in graduation (45% for SC/ST candidates at most universities)</li>
+            <li>No age limit — most programs welcome all age groups</li>
+            <li>No entrance exam required at most universities (direct admission)</li>
+            <li>Work experience is preferred but not mandatory at most universities</li>
+          </ul>
+
+          <div class="gold-box">
+            <p><strong>💡 Good to know:</strong> Unlike regular MBA programs, most Online MBA programs do not require CAT/MAT/GMAT scores. Universities like Amity, NMIMS, and Manipal offer direct admission based on graduation marks and a basic application process.</p>
+          </div>
+
+          <h3>Admission Process (Typical)</h3>
+          <ul class="checklist">
+            <li>Fill online application form on the university website</li>
+            <li>Submit academic documents (graduation certificate, marksheets)</li>
+            <li>Some universities conduct a basic online aptitude/interview round</li>
+            <li>Pay admission fees and receive login credentials</li>
+            <li>Orientation and academic year begins</li>
+          </ul>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- TOP COLLEGES -->
+        <div class="guide-section aos" id="top-colleges">
+          <span class="section-tag">Top Colleges</span>
+          <h2>Top Online MBA Colleges in India 2026</h2>
+          <p>All universities listed below are UGC-DEB approved and verified by the GradPath research team for accreditation, fees, and placement support.</p>
+
+          <div class="comp-table-wrap">
+            <table class="comp-table">
+              <thead>
+                <tr>
+                  <th>University</th>
+                  <th>Accreditation</th>
+                  <th>Total Fees</th>
+                  <th>Duration</th>
+                  <th>Best For</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td><strong>Amity University Online</strong></td><td><span class="badge badge-green">NAAC A+</span></td><td>₹1,30,000</td><td>2 Years</td><td>Brand Value</td></tr>
+                <tr><td><strong>NMIMS Global Access</strong></td><td><span class="badge badge-green">NAAC A+</span></td><td>₹2,50,000</td><td>2 Years</td><td>Finance/Analytics</td></tr>
+                <tr><td><strong>Manipal Online</strong></td><td><span class="badge badge-green">NAAC A+</span></td><td>₹1,60,000</td><td>2 Years</td><td>Industry Network</td></tr>
+                <tr><td><strong>LPU Online</strong></td><td><span class="badge badge-blue">NAAC A++</span></td><td>₹1,20,000</td><td>2 Years</td><td>Affordable Quality</td></tr>
+                <tr><td><strong>Chandigarh University</strong></td><td><span class="badge badge-green">NAAC A+</span></td><td>₹1,40,000</td><td>2 Years</td><td>Placements</td></tr>
+                <tr><td><strong>Jain University Online</strong></td><td><span class="badge badge-gold">UGC Approved</span></td><td>₹1,50,000</td><td>2 Years</td><td>Entrepreneurship</td></tr>
+                <tr><td><strong>IGNOU</strong></td><td><span class="badge badge-blue">Central University</span></td><td>₹31,500</td><td>2–5 Years</td><td>Budget Option</td></tr>
+                <tr><td><strong>Symbiosis Online</strong></td><td><span class="badge badge-green">NAAC A</span></td><td>₹2,10,000</td><td>2 Years</td><td>HR & Marketing</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon">📌</div>
+            <p>Fees shown are approximate total program costs for 2025–26 academic year. Fees may vary by specialization. Always verify directly with the university before enrolling. <a href="compare.html" style="color:var(--blue);font-weight:700">Compare all programs side-by-side →</a></p>
+          </div>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- FEES & DURATION -->
+        <div class="guide-section aos" id="fees">
+          <span class="section-tag">Fees & Duration</span>
+          <h2>Online MBA Fees & Duration in India</h2>
+          <p>One of the biggest advantages of an Online MBA is its affordability. Here's a clear breakdown of what you can expect to pay.</p>
+
+          <h3>Fee Range by Category</h3>
+          <div class="cards-grid">
+            <div class="card-item"><span class="card-icon">💸</span><h4>Budget (Under ₹75,000)</h4><p>IGNOU, some state universities. Best for government employees and those prioritizing cost. UGC approved.</p></div>
+            <div class="card-item"><span class="card-icon">⚖️</span><h4>Mid-Range (₹75k–₹1.75L)</h4><p>LPU, Amity, Chandigarh University, Jain. Best balance of brand, placement support, and fees.</p></div>
+            <div class="card-item"><span class="card-icon">🏆</span><h4>Premium (₹1.75L–₹3L)</h4><p>NMIMS, Symbiosis, Manipal. Strongest brand recognition, industry connections, and alumni network.</p></div>
+            <div class="card-item"><span class="card-icon">📅</span><h4>EMI Options</h4><p>Most universities offer no-cost EMI starting ₹5,000–8,000/month. Scholarships up to 50% available for merit students.</p></div>
+          </div>
+
+          <h3>Program Duration</h3>
+          <p>Standard Online MBA duration is <strong>2 years</strong> (4 semesters). Some universities offer accelerated 18-month programs or extended 3-year options for working professionals. IGNOU offers flexibility up to 5 years.</p>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- SPECIALIZATIONS -->
+        <div class="guide-section aos" id="specializations">
+          <span class="section-tag">Specializations</span>
+          <h2>Popular Online MBA Specializations</h2>
+          <p>Most universities offer 10–15+ specializations. Your choice should align with your industry, career goals, and market demand. Here are the most popular and high-demand options in India:</p>
+
+          <div class="spec-grid">
+            <div class="spec-item"><span class="spec-icon">📈</span><h5>Finance</h5><p>Most in-demand. Covers banking, investment, corporate finance, financial analysis.</p></div>
+            <div class="spec-item"><span class="spec-icon">📣</span><h5>Marketing</h5><p>Digital marketing, brand management, consumer behaviour, sales strategy.</p></div>
+            <div class="spec-item"><span class="spec-icon">👥</span><h5>Human Resources</h5><p>Talent management, organizational behaviour, labour law, HR analytics.</p></div>
+            <div class="spec-item"><span class="spec-icon">📊</span><h5>Business Analytics</h5><p>Fastest growing. Data-driven decision making, ML basics, business intelligence.</p></div>
+            <div class="spec-item"><span class="spec-icon">⚙️</span><h5>Operations</h5><p>Supply chain, logistics, quality management, lean management.</p></div>
+            <div class="spec-item"><span class="spec-icon">💻</span><h5>IT Management</h5><p>Perfect for IT professionals. Project management, digital transformation, agile.</p></div>
+            <div class="spec-item"><span class="spec-icon">🚀</span><h5>Entrepreneurship</h5><p>Business planning, startup finance, venture capital, innovation management.</p></div>
+            <div class="spec-item"><span class="spec-icon">🏥</span><h5>Healthcare Mgmt</h5><p>Growing field. Hospital administration, health policy, pharmaceutical management.</p></div>
+            <div class="spec-item"><span class="spec-icon">🌐</span><h5>International Business</h5><p>Global trade, export-import, cross-cultural management, international finance.</p></div>
+          </div>
+
+          <div class="gold-box">
+            <p><strong>💡 GradPath Tip:</strong> Business Analytics and Finance are currently the two highest-paying specializations for Online MBA graduates in India. If you're in IT, consider IT Management or Business Analytics for the best ROI.</p>
+          </div>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- UGC-DEB -->
+        <div class="guide-section aos" id="ugc-deb">
+          <span class="section-tag">Approval & Recognition</span>
+          <h2>UGC-DEB Approval — Why It Matters</h2>
+          <p>The University Grants Commission — Distance Education Bureau (UGC-DEB) is the regulatory body that approves universities to offer online and distance degrees in India. An Online MBA from a UGC-DEB approved university is:</p>
+
+          <ul class="checklist">
+            <li>Equivalent to a regular MBA for most government job applications</li>
+            <li>Valid for promotions in government and PSU jobs</li>
+            <li>Recognized for further studies (PhD, certifications)</li>
+            <li>Accepted by most private sector employers</li>
+            <li>Eligible for education loans from nationalized banks</li>
+          </ul>
+
+          <div class="info-box">
+            <div class="info-icon">⚠️</div>
+            <p><strong>Red flag to watch:</strong> If a university offers an Online MBA but is NOT listed on the UGC-DEB approved list, the degree may not be recognized. Before paying any fees, verify the university at <strong>deb.ugc.ac.in</strong>. GradPath only lists UGC-DEB approved universities.</p>
+          </div>
+
+          <h3>NAAC Accreditation</h3>
+          <p>Separate from UGC-DEB, NAAC (National Assessment and Accreditation Council) grades universities from A++ to C. NAAC A or above indicates strong institutional quality. Look for:</p>
+          <ul class="checklist">
+            <li><strong>NAAC A++:</strong> Highest grade — LPU, Chandigarh University</li>
+            <li><strong>NAAC A+:</strong> Excellent — Amity, NMIMS, Manipal</li>
+            <li><strong>NAAC A:</strong> Good — Symbiosis, many others</li>
+          </ul>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- CAREER -->
+        <div class="guide-section aos" id="career">
+          <span class="section-tag">Career Scope</span>
+          <h2>Career Scope After Online MBA</h2>
+          <p>An Online MBA opens doors across industries. Here's what you can realistically expect post-degree:</p>
+
+          <div class="cards-grid">
+            <div class="card-item"><span class="card-icon">💼</span><h4>Salary Growth</h4><p>Average salary hike of 30–60% post-MBA for working professionals. Freshers can expect starting salaries of ₹4–8 LPA depending on specialization and university.</p></div>
+            <div class="card-item"><span class="card-icon">🏢</span><h4>Top Recruiting Sectors</h4><p>IT, BFSI (Banking, Financial Services & Insurance), Consulting, FMCG, E-commerce, Healthcare, and Manufacturing.</p></div>
+            <div class="card-item"><span class="card-icon">📍</span><h4>Roles After MBA</h4><p>Business Analyst, Marketing Manager, HR Manager, Operations Lead, Financial Analyst, Product Manager, and more.</p></div>
+            <div class="card-item"><span class="card-icon">🎓</span><h4>Further Education</h4><p>UGC-DEB recognized degrees qualify for PhD admissions and professional certifications like CFA, PMP, SHRM.</p></div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon">📌</div>
+            <p>The key to maximizing your Online MBA ROI is choosing the right specialization for your industry, leveraging your university's alumni network, and actively participating in placement drives. Talk to a GradPath counsellor for personalized guidance.</p>
+          </div>
+        </div>
+
+        <hr class="guide-divider"/>
+
+        <!-- FAQ -->
+        <div class="guide-section aos" id="faq">
+          <span class="section-tag">FAQ</span>
+          <h2>Frequently Asked Questions</h2>
+          <div class="faq-list">
+            <div class="faq-item">
+              <button class="faq-q">Is an Online MBA as valuable as a regular MBA? <span class="faq-arrow">▼</span></button>
+              <div class="faq-a">For most private sector roles, an Online MBA from a reputed UGC-DEB approved university is treated at par with a regular MBA. The degree certificate does not say "online" on it. However, for IIM-level brand recognition or top consulting firms, a full-time MBA from a premier institute still holds an advantage.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Can I do an Online MBA while working full-time? <span class="faq-arrow">▼</span></button>
+              <div class="faq-a">Yes — this is the primary use case for Online MBA. Programs are specifically designed for working professionals with weekend live classes (Saturday/Sunday), recorded lectures accessible 24/7, and flexible assignment deadlines. Most students complete it without taking a break from work.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Is entrance exam (CAT/MAT/GMAT) required? <span class="faq-arrow">▼</span></button>
+              <div class="faq-a">Most Online MBA programs in India do not require CAT, MAT, or GMAT scores. Universities like Amity, NMIMS, Manipal, LPU, and Chandigarh University offer direct admission based on graduation marks. Some premium universities may conduct their own basic aptitude test or interview.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">Will I get placement support with an Online MBA? <span class="faq-arrow">▼</span></button>
+              <div class="faq-a">Yes, most reputable Online MBA programs include a dedicated placement cell, resume workshops, mock interviews, and campus recruitment drives. Results vary significantly by university. GradPath counsellors can guide you on which universities have the strongest placement track records for your target sector.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">How do I verify if a university is UGC-DEB approved? <span class="faq-arrow">▼</span></button>
+              <div class="faq-a">Visit deb.ugc.ac.in and search for the university name in the approved institutions list. All universities listed on GradPath have been manually verified by our research team. If you're considering a university not listed on GradPath, always check the UGC-DEB site before paying any fees.</div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q">What is the best Online MBA specialization in 2026? <span class="faq-arrow">▼</span></button>
+              <div class="faq-a">Business Analytics and Finance are currently the highest-paying and most in-demand specializations. For IT professionals, IT Management or Business Analytics offers the best salary jump. For those in operations or supply chain, Operations Management aligns well. The "best" specialization ultimately depends on your industry and career goals — a GradPath counsellor can give you personalized advice at no cost.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA BANNER -->
+        <div class="guide-cta-banner aos">
+          <div class="guide-cta-banner-inner">
+            <h2>Still Confused? Talk to a <em>Free Expert</em></h2>
+            <p>Our education counsellors have guided 2 lakh+ students. Get honest, personalized advice — no pressure, no commission bias.</p>
+            <div class="guide-cta-btns">
+              <a href="#" class="btn-white" onclick="openLeadModal();return false;" style="font-size:.92rem;padding:13px 28px">Get Free Counselling Call →</a>
+              <a href="compare.html" class="btn-ghost" style="font-size:.92rem;padding:12px 28px">Compare All Colleges</a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /guide-content -->
+
+      <!-- SIDEBAR -->
+      <aside class="guide-sidebar">
+        <div class="sidebar-cta">
+          <h4>🎓 Free Expert Counselling</h4>
+          <p>Not sure which MBA program is right for you? Talk to a GradPath advisor — 100% free, no pressure.</p>
+          <a href="#" class="btn-gold" onclick="openLeadModal();return false;">Get Free Call →</a>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>📊 Quick Stats</h4>
+          <div class="sidebar-stat"><span class="s-label">Avg. Fees (2 Yr)</span><span class="s-val">₹1–2.5L</span></div>
+          <div class="sidebar-stat"><span class="s-label">Duration</span><span class="s-val">2 Years</span></div>
+          <div class="sidebar-stat"><span class="s-label">Entrance Exam</span><span class="s-val">Not required</span></div>
+          <div class="sidebar-stat"><span class="s-label">Avg. Salary Hike</span><span class="s-val">30–60%</span></div>
+          <div class="sidebar-stat"><span class="s-label">UGC-DEB Approved</span><span class="s-val">50+ colleges</span></div>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>🔗 Quick Links</h4>
+          <div class="sidebar-list">
+            <a href="colleges.html">Browse All MBA Colleges</a>
+            <a href="compare.html">Compare Programs</a>
+            <a href="colleges.html">Filter by Fees</a>
+            <a href="colleges.html">Filter by Specialization</a>
+            <a href="contact.html">Talk to a Counsellor</a>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h4>📚 Related Guides</h4>
+          <div class="sidebar-list">
+            <a href="#">Online BBA Guide 2026</a>
+            <a href="#">Online BCA Guide 2026</a>
+            <a href="#">Online MCA Guide 2026</a>
+            <a href="#">UGC-DEB Explained</a>
+            <a href="#">NAAC Grades Decoded</a>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44"><defs><linearGradient id="flg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#1E56A0"/><stop offset="100%" style="stop-color:#0A2463"/></linearGradient></defs><rect width="44" height="44" rx="11" fill="url(#flg)"/><polygon points="22,9 38,16 22,23 6,16" fill="white" opacity="0.95"/><line x1="38" y1="16" x2="38" y2="26" stroke="white" stroke-width="2.2" stroke-linecap="round" opacity="0.85"/><circle cx="38" cy="28" r="2.5" fill="#F4A833"/><polyline points="12,20 19,27 28,23 35,17" fill="none" stroke="#F4A833" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span class="footer-logo-text">Grad<span>Path</span></span>
+        </div>
+        <p>India's trusted platform for online degree discovery. UGC-approved colleges. Free counselling. Student-first always.</p>
+        <div class="footer-social"><a href="#" class="soc-btn">𝕏</a><a href="#" class="soc-btn">in</a><a href="#" class="soc-btn">▶</a><a href="#" class="soc-btn">◉</a></div>
+      </div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="colleges.html">All Colleges</a></li><li><a href="compare.html">Compare Programs</a></li><li><a href="about.html">About GradPath</a></li><li><a href="online-mba-guide.html">Online MBA Guide</a></li><li><a href="resources.html">Resources & Blog</a></li></ul></div>
+      <div class="footer-col"><h4>Programs</h4><ul><li><a href="colleges.html">Online MBA</a></li><li><a href="colleges.html">Online BBA</a></li><li><a href="colleges.html">Online BCA</a></li><li><a href="colleges.html">Online MCA</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><p style="font-size:.84rem;color:rgba(255,255,255,.42);margin-bottom:8px">For free counselling:</p><a href="/cdn-cgi/l/email-protection#8ae2efe6e6e5caedf8ebeefaebfee2a4e3e4" class="footer-email"><span class="__cf_email__" data-cfemail="3c54595050537c5b4e5d584c5d4854125552">[email&#160;protected]</span></a><ul style="margin-top:14px"><li><a href="contact.html">Contact Form</a></li></ul></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><div class="container" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px"><span>© 2026 GradPath. All rights reserved.</span><span><a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Disclaimer</a></span></div></div>
+</footer>
+
+<!-- MODAL -->
+<div id="leadModal" class="lead-modal" aria-hidden="true">
+  <div class="lead-modal-backdrop" id="leadBackdrop"></div>
+  <div class="lead-modal-dialog" role="dialog" aria-modal="true">
+    <button class="lead-close" id="leadClose">✕</button>
+    <div id="leadFormView">
+      <div class="modal-header-band">
+        <div class="modal-header-left"><div class="modal-icon-wrap">🎓</div><div><h3>Get Free Counselling</h3><p>Our advisors will call you within 2 hours</p></div></div>
+        <div class="modal-trust-badges"><span class="mtb">✅ Free</span><span class="mtb">✅ No Spam</span><span class="mtb">✅ 2hr Callback</span></div>
+      </div>
+      <form id="leadForm" class="lead-form" novalidate>
+        <div class="lf-row">
+          <div class="lf-field"><label for="leadName">Full Name <span class="req">*</span></label><input type="text" id="leadName" placeholder="Rahul Sharma" autocomplete="name"/><div class="lf-err" id="errName">Please enter your full name</div></div>
+          <div class="lf-field"><label for="leadPhone">Phone <span class="req">*</span></label><input type="tel" id="leadPhone" placeholder="98765 43210" maxlength="10" inputmode="numeric"/><div class="lf-err" id="errPhone">Enter valid 10-digit number</div></div>
+        </div>
+        <div class="lf-row">
+          <div class="lf-field"><label for="leadEmail">Email <span class="req">*</span></label><input type="email" id="leadEmail" placeholder="rahul@gmail.com" autocomplete="email"/><div class="lf-err" id="errEmail">Enter a valid email address</div></div>
+          <div class="lf-field"><label for="leadProgram">Program <span class="req">*</span></label><select id="leadProgram"><option value="">-- Select Program --</option><option value="Online MBA">Online MBA</option><option value="Online BBA">Online BBA</option><option value="Online BCA">Online BCA</option><option value="Online MCA">Online MCA</option></select><div class="lf-err" id="errProgram">Please select a program</div></div>
+        </div>
+        <div class="schedule-toggle-row"><span>📅</span><span>Schedule a specific time?</span><button type="button" id="toggleSchedule" class="toggle-sch-btn">Choose a slot</button></div>
+        <div id="scheduleBox" class="schedule-box" style="display:none">
+          <p class="sch-title">Pick a call date and time</p>
+          <div class="sch-dates" id="schDates"></div>
+          <div class="sch-times">
+            <button type="button" class="sch-time active" data-time="10:00 AM">10:00 AM</button>
+            <button type="button" class="sch-time" data-time="11:00 AM">11:00 AM</button>
+            <button type="button" class="sch-time" data-time="12:00 PM">12:00 PM</button>
+            <button type="button" class="sch-time" data-time="2:00 PM">2:00 PM</button>
+            <button type="button" class="sch-time" data-time="3:00 PM">3:00 PM</button>
+            <button type="button" class="sch-time" data-time="5:00 PM">5:00 PM</button>
+            <button type="button" class="sch-time" data-time="7:00 PM">7:00 PM</button>
+          </div>
+          <p class="sch-selected-label" id="schSelectedLabel"></p>
+        </div>
+        <button type="submit" class="lead-submit-btn">Get Free Counselling Call →</button>
+        <p class="lead-privacy">🔒 Your data is safe. We never spam or share your info.</p>
+      </form>
+    </div>
+    <div id="leadSuccessView" style="display:none">
+      <div class="modal-success">
+        <div class="success-circle">✓</div>
+        <h3>You're all set! 🎉</h3>
+        <p id="successMsg">Our counsellor will call you within 2 hours to guide you through the best programs.</p>
+        <div class="success-meta" id="successMeta"></div>
+        <a href="colleges.html" class="btn-primary" style="margin:0 auto;display:inline-flex">Explore Colleges While You Wait →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

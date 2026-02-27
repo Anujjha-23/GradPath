@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Explore Online Programs | GradPath</title>
+  <meta name="description" content="Compare top Online MBA, BBA, BCA & MCA programs from India's best UGC-approved universities." />
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231E56A0'/><text y='.9em' font-size='70' x='15' fill='white' font-weight='900'>G</text></svg>" />
+  <style>
+    .clg-hero{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:72px 0 50px;color:#fff;text-align:center;position:relative;overflow:hidden}
+    .clg-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 40%,rgba(244,168,51,.12),transparent 55%)}
+    .clg-hero h1{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;margin-bottom:10px}
+    .clg-hero h1 em{font-style:normal;color:var(--accent)}
+    .clg-hero p{opacity:.82;font-size:1rem}
+    .filter-sticky{background:#fff;border-bottom:1px solid var(--gray-light);box-shadow:0 2px 12px rgba(10,36,99,.06);position:sticky;top:68px;z-index:90;padding:12px 0}
+    .filter-inner{display:flex;align-items:center;gap:10px;flex-wrap:wrap;max-width:1200px;margin:0 auto;padding:0 24px}
+    .prog-tabs{display:flex;gap:5px;background:var(--off-white);padding:4px;border-radius:10px}
+    .ptab{padding:7px 17px;border-radius:7px;border:none;background:transparent;color:var(--gray-text);font-family:var(--font-body);font-size:.87rem;font-weight:600;cursor:pointer;transition:var(--transition)}
+    .ptab.active{background:var(--blue-mid);color:#fff;box-shadow:0 2px 8px rgba(30,86,160,.28)}
+    .search-wrap{position:relative;flex:1;min-width:160px;max-width:250px}
+    .search-wrap svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--gray-mid)}
+    .search-wrap input{width:100%;padding:9px 12px 9px 32px;border:1.5px solid var(--gray-light);border-radius:9px;font-family:var(--font-body);font-size:.86rem;background:var(--off-white);outline:none;transition:border-color .2s}
+    .search-wrap input:focus{border-color:var(--blue-mid);background:#fff}
+    .sort-sel{padding:9px 13px;border:1.5px solid var(--gray-light);border-radius:9px;font-family:var(--font-body);font-size:.86rem;background:var(--off-white);outline:none;cursor:pointer}
+    .res-count{margin-left:auto;font-size:.8rem;color:var(--gray-text);white-space:nowrap}
+    .colleges-wrap{max-width:1200px;margin:0 auto;padding:32px 24px 80px}
+    .college-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px}
+
+    /* CARD */
+    .clg-card{background:#fff;border-radius:18px;border:1.5px solid var(--gray-light);box-shadow:0 4px 16px rgba(10,36,99,.06);overflow:hidden;cursor:pointer;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+    .clg-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(10,36,99,.14)}
+
+    /* Card head - blue gradient, white text */
+    .cc-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:18px 18px 14px;display:flex;align-items:flex-start;gap:12px;position:relative}
+    .cc-logo{width:50px;height:50px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:.82rem;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+    .cc-info{flex:1;min-width:0;padding-right:58px}
+    .cc-name{font-family:var(--font-display);font-size:.92rem;font-weight:700;color:#fff;line-height:1.3;word-wrap:break-word}
+    .cc-loc{font-size:.73rem;color:rgba(255,255,255,.75);margin-top:3px}
+    .cc-badge{position:absolute;top:12px;right:12px;background:var(--accent);color:var(--dark);font-size:.63rem;font-weight:800;padding:3px 8px;border-radius:20px;white-space:nowrap;letter-spacing:.03em}
+
+    /* Card body */
+    .cc-body{padding:14px 18px;flex:1}
+    .cc-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:12px}
+    .cc-stat{text-align:center;padding:8px 4px;background:var(--off-white);border-radius:8px}
+    .cc-stat .sv{font-family:var(--font-display);font-size:.85rem;font-weight:800;color:var(--blue-dark);display:block}
+    .cc-stat .sl{font-size:.62rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.03em}
+    .cc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+    .cc-acc{background:#e8f5e9;color:#2e7d32;font-size:.66rem;font-weight:700;padding:2px 8px;border-radius:20px}
+    .cc-spec-tag{background:var(--gray-light);color:var(--gray-text);font-size:.66rem;font-weight:600;padding:2px 8px;border-radius:6px}
+    .cc-more{font-size:.66rem;color:var(--blue-mid);font-weight:700}
+
+    /* Card foot */
+    .cc-foot{padding:12px 18px;border-top:1px solid var(--gray-light);display:flex;align-items:center;justify-content:space-between;gap:10px}
+    .cc-fee{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:var(--blue-dark);display:block}
+    .cc-emi{font-size:.67rem;color:var(--gray-mid)}
+    .cc-cta{background:var(--blue-mid);color:#fff;border:none;border-radius:9px;padding:9px 15px;font-family:var(--font-display);font-size:.8rem;font-weight:700;cursor:pointer;transition:background .2s;white-space:nowrap}
+    .cc-cta:hover{background:var(--blue-dark)}
+
+    /* Empty */
+    .empty-state{text-align:center;padding:80px 20px;color:var(--gray-text);grid-column:1/-1}
+    .empty-state h3{font-size:1.1rem;font-family:var(--font-display);margin-bottom:6px;color:var(--blue-dark)}
+
+    /* DETAIL MODAL */
+    .clg-modal-overlay{display:none;position:fixed;inset:0;background:rgba(6,12,28,.62);backdrop-filter:blur(5px);z-index:3000;align-items:center;justify-content:center;padding:20px}
+    .clg-modal-overlay.open{display:flex;animation:mFade .2s ease}
+    @keyframes mFade{from{opacity:0}to{opacity:1}}
+    .clg-modal{background:#fff;border-radius:22px;width:100%;max-width:660px;max-height:88vh;overflow-y:auto;box-shadow:0 40px 80px rgba(0,0,0,.25);animation:mUp .3s cubic-bezier(.34,1.56,.64,1);position:relative}
+    @keyframes mUp{from{opacity:0;transform:translateY(40px) scale(.97)}to{opacity:1;transform:none}}
+    .cm-close{position:absolute;top:14px;right:14px;width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.08);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;color:#666;z-index:10;transition:background .2s}
+    .cm-close:hover{background:rgba(0,0,0,.15)}
+    .cm-head{background:linear-gradient(135deg,var(--blue-dark),var(--blue-mid));padding:26px 26px 20px;border-radius:22px 22px 0 0;color:#fff;position:relative;overflow:hidden}
+    .cm-head::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 85% 20%,rgba(244,168,51,.18),transparent 55%)}
+    .cm-head-row{display:flex;gap:14px;align-items:flex-start;position:relative;z-index:1}
+    .cm-logo{width:56px;height:56px;border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:.88rem;flex-shrink:0;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+    .cm-head h2{font-family:var(--font-display);font-size:1.15rem;font-weight:800;margin-bottom:4px;line-height:1.25}
+    .cm-loc{font-size:.8rem;opacity:.78}
+    .cm-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;position:relative;z-index:1}
+    .cm-badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.24);color:#fff;font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:20px}
+    .cm-badge.gold{background:rgba(244,168,51,.25);border-color:rgba(244,168,51,.4);color:#fcd34d}
+    .cm-body{padding:22px 26px 26px}
+    .cm-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px}
+    .cm-kpi{background:var(--off-white);border:1.5px solid var(--gray-light);border-radius:12px;padding:13px;text-align:center}
+    .cm-kpi .kv{font-family:var(--font-display);font-size:1.05rem;font-weight:800;color:var(--blue-mid);display:block;margin-bottom:3px}
+    .cm-kpi .kl{font-size:.65rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.04em}
+    .cm-sec{font-family:var(--font-display);font-size:.7rem;font-weight:800;color:var(--blue-mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px;margin-top:16px}
+    .cm-desc{font-size:.89rem;color:var(--gray-text);line-height:1.72}
+    .cm-hls{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+    .cm-hl{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--dark);background:var(--off-white);padding:8px 11px;border-radius:9px;border:1px solid var(--gray-light)}
+    .cm-hl::before{content:'✓';color:#10b981;font-weight:900;font-size:.78rem;flex-shrink:0}
+    .cm-chips{display:flex;flex-wrap:wrap;gap:6px}
+    .cm-chip{background:var(--blue-pale);color:var(--blue-mid);font-size:.77rem;font-weight:600;padding:4px 12px;border-radius:20px}
+    .cm-pl{display:flex;justify-content:space-around;background:var(--off-white);border:1.5px solid var(--gray-light);border-radius:12px;padding:14px 10px}
+    .cm-pl-item{text-align:center}
+    .cm-plv{font-family:var(--font-display);font-size:.92rem;font-weight:800;color:var(--blue-dark);display:block}
+    .cm-pll{font-size:.64rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.04em}
+    .cm-infos{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .cm-info{background:var(--off-white);border:1px solid var(--gray-light);border-radius:10px;padding:11px 13px}
+    .cm-info .il{font-size:.66rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+    .cm-info .iv{font-size:.87rem;font-weight:700;color:var(--blue-dark)}
+    .cm-acts{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+    .cm-apply{flex:1;min-width:130px;background:var(--blue-mid);color:#fff;border:none;border-radius:11px;padding:13px 18px;font-family:var(--font-display);font-size:.88rem;font-weight:700;cursor:pointer;transition:background .2s;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center;gap:5px}
+    .cm-apply:hover{background:var(--blue-dark)}
+    .cm-back{flex:1;min-width:130px;background:transparent;color:var(--blue-mid);border:2px solid var(--blue-mid);border-radius:11px;padding:12px 18px;font-family:var(--font-display);font-size:.88rem;font-weight:700;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px}
+    .cm-back:hover{background:var(--blue-pale)}
+    .clg-modal::-webkit-scrollbar{width:5px}
+    .clg-modal::-webkit-scrollbar-thumb{background:var(--gray-light);border-radius:10px}
+
+    @media(max-width:640px){
+      .college-grid{grid-template-columns:1fr}
+      .filter-inner{gap:7px}
+      .res-count{display:none}
+      .clg-modal-overlay{align-items:flex-end;padding:0}
+      .clg-modal{border-radius:18px 18px 0 0;max-height:88vh}
+      .cm-kpis{grid-template-columns:1fr 1fr}
+      .cm-hls,.cm-infos{grid-template-columns:1fr}
+    }
+  
+  /* ── Date picker button styles ── */
+  .sch-date-btn {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: #fff; border: 1.5px solid #e2e8f0; border-radius: 10px;
+    padding: 8px 11px; cursor: pointer; min-width: 52px;
+    transition: border-color .18s, background .18s; font-family: inherit;
+    gap: 1px;
+  }
+  .sch-date-btn:hover { border-color: #1E56A0; background: #EEF3FB; }
+  .sch-date-btn.active { border-color: #1E56A0; background: #1E56A0; }
+  .sch-date-btn.today-btn { border-color: #F4A833; }
+  .sch-date-btn.today-btn.active { background: #F4A833; border-color: #F4A833; }
+  .sch-day-name { font-size: .58rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: .07em; color: #64748b; }
+  .sch-date-btn.active .sch-day-name { color: rgba(255,255,255,.8); }
+  .sch-date-btn.today-btn.active .sch-day-name { color: #0A2463; }
+  .sch-day-num { font-size: 1.05rem; font-weight: 800; color: #0A2463; line-height: 1.1; }
+  .sch-date-btn.active .sch-day-num { color: #fff; }
+  .sch-date-btn.today-btn.active .sch-day-num { color: #0A2463; }
+  .sch-day-month { font-size: .58rem; color: #94a3b8; font-weight: 500; }
+  .sch-date-btn.active .sch-day-month { color: rgba(255,255,255,.7); }
+  .sch-today-label { font-size: .55rem; font-weight: 800; color: #F4A833; letter-spacing: .05em; }
+  .sch-date-btn.today-btn.active .sch-today-label { color: #0A2463; }
+  .sch-dates { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 12px; }
+
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-inner">
+    <a href="index.html" class="navbar-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46" width="46" height="46">
+        <defs>
+          <linearGradient id="lg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1E56A0"/>
+            <stop offset="100%" style="stop-color:#0A2463"/>
+          </linearGradient>
+        </defs>
+        <rect width="46" height="46" rx="12" fill="url(#lg1)"/>
+        <polygon points="23,8 40,15 23,22 6,15" fill="white" opacity="0.95"/>
+        <line x1="40" y1="15" x2="40" y2="26" stroke="white" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+        <circle cx="40" cy="28" r="2.2" fill="#F4A833"/>
+        <polyline points="12,20 19,28 27,24 34,18" fill="none" stroke="#F4A833" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <polyline points="31,18 34,18 34,21" fill="none" stroke="#F4A833" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text">Grad<em>Path</em></span>
+    </a>
+        <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="colleges.html">Colleges</a>
+      <a href="compare.html">Compare</a>
+      <a href="about.html">About</a>
+      <a href="resources.html">Resources</a>
+      <a href="online-mba-guide.html">MBA Guide</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a href="#" class="btn-accent nav-cta open-lead-modal">Free Counselling →</a>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+    <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="colleges.html">Colleges</a>
+    <a href="compare.html">Compare</a>
+    <a href="about.html">About</a>
+    <a href="resources.html">Resources</a>
+    <a href="online-mba-guide.html">MBA Guide</a>
+    <a href="contact.html">Contact</a>
+    <a href="#" class="btn-primary open-lead-modal" style="margin-top:8px;justify-content:center">Free Counselling →</a>
+  </div>
+</nav>
+
+<section class="clg-hero">
+  <h1>Explore <em>Online Programs</em></h1>
+  <p>Compare MBA, BBA, BCA &amp; MCA from India's top UGC-approved universities</p>
+</section>
+
+<div class="filter-sticky">
+  <div class="filter-inner">
+    <div class="prog-tabs" id="progTabs">
+      <button class="ptab active" data-prog="ALL">All</button>
+      <button class="ptab" data-prog="MBA">MBA</button>
+      <button class="ptab" data-prog="BBA">BBA</button>
+      <button class="ptab" data-prog="BCA">BCA</button>
+      <button class="ptab" data-prog="MCA">MCA</button>
+    </div>
+    <div class="search-wrap">
+      <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      <input type="text" id="searchInput" placeholder="Search college…" />
+    </div>
+    <select class="sort-sel" id="sortSel">
+      <option value="name">Sort A–Z</option>
+      <option value="fees_asc">Fees: Low → High</option>
+      <option value="fees_desc">Fees: High → Low</option>
+    </select>
+    <span class="res-count">Showing <strong id="resCount">0</strong> programs</span>
+  </div>
+</div>
+
+<div class="colleges-wrap">
+  <div class="college-grid" id="collegeGrid"></div>
+</div>
+
+<!-- COLLEGE DETAIL MODAL -->
+<div class="clg-modal-overlay" id="modalOverlay">
+  <div class="clg-modal" id="modalBox">
+    <button class="cm-close" id="modalClose">✕</button>
+    <div class="cm-head">
+      <div class="cm-head-row">
+        <div class="cm-logo" id="mLogo"></div>
+        <div><h2 id="mName"></h2><div class="cm-loc" id="mLoc"></div></div>
+      </div>
+      <div class="cm-badges" id="mBadges"></div>
+    </div>
+    <div class="cm-body">
+      <div class="cm-kpis" id="mKpis"></div>
+      <div class="cm-sec">About the Program</div>
+      <p class="cm-desc" id="mDesc"></p>
+      <div class="cm-sec">Key Highlights</div>
+      <div class="cm-hls" id="mHls"></div>
+      <div class="cm-sec">Specializations Offered</div>
+      <div class="cm-chips" id="mSpecs"></div>
+      <div class="cm-sec">Placement &amp; Career Support</div>
+      <div class="cm-pl" id="mPl"></div>
+      <div class="cm-sec">Program Details</div>
+      <div class="cm-infos" id="mInfos"></div>
+      <div class="cm-acts">
+        <a href="contact.html" class="cm-apply">Apply Now — Free →</a>
+        <button class="cm-back" onclick="closeModal()">← Back to List</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEAD MODAL -->
+<div id="leadModal" class="lead-modal" aria-hidden="true">
+  <div class="lead-modal-backdrop" id="leadBackdrop"></div>
+  <div class="lead-modal-dialog" role="dialog" aria-modal="true">
+    <button class="lead-close" id="leadClose" aria-label="Close">✕</button>
+    <div id="leadFormView">
+      <div class="modal-header-band">
+        <div class="modal-header-left">
+          <div class="modal-icon-wrap">🎓</div>
+          <div><h3>Get Free Counselling</h3><p>Our advisors will call you within 2 hours</p></div>
+        </div>
+        <div class="modal-trust-badges">
+          <span class="mtb">✅ Free</span><span class="mtb">✅ No Spam</span><span class="mtb">✅ 2hr Callback</span>
+        </div>
+      </div>
+      <form id="leadForm" class="lead-form" novalidate>
+        <div class="lf-row">
+          <div class="lf-field"><label for="leadName">Full Name <span class="req">*</span></label><input type="text" id="leadName" placeholder="Rahul Sharma" /><div class="lf-err" id="errName">Please enter your full name</div></div>
+          <div class="lf-field"><label for="leadPhone">Phone <span class="req">*</span></label><input type="tel" id="leadPhone" placeholder="98765 43210" maxlength="10" inputmode="numeric" /><div class="lf-err" id="errPhone">Enter valid 10-digit number</div></div>
+        </div>
+        <div class="lf-row">
+          <div class="lf-field"><label for="leadEmail">Email <span class="req">*</span></label><input type="email" id="leadEmail" placeholder="rahul@gmail.com" /><div class="lf-err" id="errEmail">Enter a valid email</div></div>
+          <div class="lf-field"><label for="leadProgram">Program <span class="req">*</span></label>
+            <select id="leadProgram"><option value="">— Select Program —</option><option value="Online MBA">Online MBA</option><option value="Online BBA">Online BBA</option><option value="Online BCA">Online BCA</option><option value="Online MCA">Online MCA</option></select>
+            <div class="lf-err" id="errProgram">Please select a program</div>
+          </div>
+        </div>
+        <div class="schedule-toggle-row"><span>📅</span><span>Schedule a specific time?</span><button type="button" id="toggleSchedule" class="toggle-sch-btn">Choose a slot</button></div>
+        <div id="scheduleBox" class="schedule-box" style="display:none">
+          <p class="sch-title">Pick a call date &amp; time</p>
+          <div class="sch-dates" id="schDates"></div>
+          <div class="sch-times"><button type="button" class="sch-time active" data-time="10:00 AM">10:00 AM</button><button type="button" class="sch-time" data-time="11:00 AM">11:00 AM</button><button type="button" class="sch-time" data-time="12:00 PM">12:00 PM</button><button type="button" class="sch-time" data-time="2:00 PM">2:00 PM</button><button type="button" class="sch-time" data-time="3:00 PM">3:00 PM</button><button type="button" class="sch-time" data-time="5:00 PM">5:00 PM</button><button type="button" class="sch-time" data-time="7:00 PM">7:00 PM</button></div>
+          <p class="sch-selected-label" id="schSelectedLabel"></p>
+        </div>
+        <button type="submit" class="lead-submit-btn"><span id="leadBtnText">Get Free Counselling Call →</span></button>
+        <p class="lead-privacy">🔒 Your data is safe. We never spam or share your info.</p>
+      </form>
+    </div>
+    <div id="leadSuccessView" style="display:none">
+      <div class="modal-success">
+        <div class="success-circle">✓</div>
+        <h3>You're all set! 🎉</h3>
+        <p id="successMsg">Our counsellor will call you within 2 hours.</p>
+        <div class="success-meta" id="successMeta"></div>
+        <a href="colleges.html" class="btn-primary" style="margin-top:20px;justify-content:center">Explore More Colleges →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="colleges-data.js"></script>
+<script src="main.js"></script>
+<script>
+let currentProg = 'ALL';
+let filtered = [...collegesData];
+
+function renderGrid() {
+  const grid = document.getElementById('collegeGrid');
+  document.getElementById('resCount').textContent = filtered.length;
+  grid.innerHTML = '';
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="empty-state"><h3>No programs found</h3><p>Try adjusting filters</p></div>';
+    return;
+  }
+  filtered.forEach(c => {
+    const specs = c.specializations.slice(0, 3);
+    const more = c.specializations.length - 3;
+    const card = document.createElement('div');
+    card.className = 'clg-card';
+    card.innerHTML = `
+      <div class="cc-head">
+        <div class="cc-logo" style="color:${c.color}">${c.logo}</div>
+        <div class="cc-info">
+          <div class="cc-name">${c.name}</div>
+          <div class="cc-loc">📍 ${c.location}</div>
+        </div>
+        <span class="cc-badge">${c.program}</span>
+      </div>
+      <div class="cc-body">
+        <div class="cc-stats">
+          <div class="cc-stat"><span class="sv">${c.duration}</span><span class="sl">Duration</span></div>
+          <div class="cc-stat"><span class="sv">${c.placement.rate}</span><span class="sl">Support</span></div>
+          <div class="cc-stat"><span class="sv">${c.placement.avg}</span><span class="sl">Avg Pkg</span></div>
+        </div>
+        <div class="cc-tags">
+          <span class="cc-acc">✓ ${c.accreditation}</span>
+          ${c.ranking ? `<span class="cc-acc" style="background:#fff8e1;color:#b45309;border:1px solid #fde68a">${c.ranking}</span>` : ''}
+          ${specs.map(s => `<span class="cc-spec-tag">${s}</span>`).join('')}
+          ${more > 0 ? `<span class="cc-more">+${more}</span>` : ''}
+        </div>
+      </div>
+      <div class="cc-foot">
+        <div><span class="cc-fee">₹${c.fees.toLocaleString()}</span><span class="cc-emi">EMI ${c.emi}/mo</span></div>
+        <a class="cc-cta" href="college-detail.html?slug=${c.slug}" onclick="event.stopPropagation()" style="text-decoration:none">View Details →</a>
+      </div>`;
+    card.addEventListener('click', () => { window.location.href = 'college-detail.html?slug=' + c.slug; });
+    grid.appendChild(card);
+  });
+}
+
+function applyFilters() {
+  filtered = collegesData.filter(c => {
+    if (currentProg !== 'ALL' && c.program !== currentProg) return false;
+    const q = document.getElementById('searchInput').value.toLowerCase();
+    if (q && !c.name.toLowerCase().includes(q) && !c.location.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  const s = document.getElementById('sortSel').value;
+  if (s === 'name') filtered.sort((a,b) => a.name.localeCompare(b.name));
+  if (s === 'fees_asc') filtered.sort((a,b) => a.fees - b.fees);
+  if (s === 'fees_desc') filtered.sort((a,b) => b.fees - a.fees);
+  renderGrid();
+}
+
+document.querySelectorAll('.ptab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ptab').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentProg = btn.dataset.prog;
+    applyFilters();
+  });
+});
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('sortSel').addEventListener('change', applyFilters);
+
+function openModal(c) {
+  document.getElementById('mLogo').textContent = c.logo;
+  document.getElementById('mLogo').style.color = c.color;
+  document.getElementById('mName').textContent = c.name;
+  document.getElementById('mLoc').textContent = '📍 ' + c.location;
+  document.getElementById('mBadges').innerHTML = `<span class="cm-badge gold">⭐ ${c.accreditation}</span><span class="cm-badge">${c.program}</span><span class="cm-badge">Est. ${c.established}</span>`;
+  document.getElementById('mKpis').innerHTML = `
+    <div class="cm-kpi"><span class="kv">₹${c.fees.toLocaleString()}</span><span class="kl">Total Fees</span></div>
+    <div class="cm-kpi"><span class="kv">${c.duration}</span><span class="kl">Duration</span></div>
+    <div class="cm-kpi"><span class="kv">${c.students}</span><span class="kl">Students</span></div>`;
+  document.getElementById('mDesc').textContent = c.description;
+  document.getElementById('mHls').innerHTML = c.highlights.map(h => `<div class="cm-hl">${h}</div>`).join('');
+  document.getElementById('mSpecs').innerHTML = c.specializations.map(s => `<span class="cm-chip">${s}</span>`).join('');
+  document.getElementById('mPl').innerHTML = `
+    <div class="cm-pl-item"><span class="cm-plv">${c.placement.avg}</span><span class="cm-pll">Avg Package</span></div>
+    <div class="cm-pl-item"><span class="cm-plv">${c.placement.top}</span><span class="cm-pll">Top Package</span></div>
+    <div class="cm-pl-item"><span class="cm-plv">${c.placement.rate}</span><span class="cm-pll">Career Support</span></div>`;
+  document.getElementById('mInfos').innerHTML = `
+    <div class="cm-info"><div class="il">Eligibility</div><div class="iv">${c.eligibility}</div></div>
+    <div class="cm-info"><div class="il">EMI Option</div><div class="iv">${c.emi}/month</div></div>`;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === document.getElementById('modalOverlay')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+applyFilters();
+</script>
+
+</body>
+</html>
